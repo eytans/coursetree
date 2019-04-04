@@ -1,0 +1,130 @@
+--startfaculty--
+fac_name=Aerospace
+  Engineering 
+fac_num=087
+fac_num=086
+fac_num=085
+fac_num=084
+--endfaculty--
+--startfaculty--
+fac_name=Biomedical
+  Engineering 
+fac_num=335
+fac_num=334
+fac_num=337
+fac_num=336
+--endfaculty--
+--startfaculty--
+fac_name=Electrical
+  Engineering 
+fac_num=047
+fac_num=046
+fac_num=045
+fac_num=044
+--endfaculty--
+--startfaculty--
+fac_name=Biology 
+fac_num=136
+fac_num=134
+--endfaculty--
+--startfaculty--
+fac_name=Architecture and
+  Town Planning 
+fac_num=205
+fac_num=204
+fac_num=207
+fac_num=206
+--endfaculty--
+--startfaculty--
+fac_name=Materials
+  Engineering 
+fac_num=317
+fac_num=316
+fac_num=315
+fac_num=314
+--endfaculty--
+--startfaculty--
+fac_name=Civil and
+  Environmental Engineering 
+fac_num=014
+fac_num=015
+fac_num=016
+fac_num=017
+--endfaculty--
+--startfaculty--
+fac_name=Mechanical
+  Engineering 
+fac_num=036
+fac_num=034
+fac_num=035
+--endfaculty--
+--startfaculty--
+fac_name=Humanities and Arts
+  
+fac_num=320
+fac_num=324
+fac_num=394
+--endfaculty--
+--startfaculty--
+fac_name=Industrial
+  Engineering and Management
+fac_num=094
+fac_num=095
+fac_num=096
+fac_num=097
+--endfaculty--
+--startfaculty--
+fac_name=Chemical
+  Engineering 
+fac_num=054
+fac_num=056
+--endfaculty--
+--startfaculty--
+fac_name=Medicine 
+fac_num=274
+fac_num=275
+fac_num=276
+fac_num=277
+--endfaculty--
+--startfaculty--
+fac_name=Computer Science
+  
+fac_num=234
+fac_num=236
+--endfaculty--
+--startfaculty--
+fac_name=Physics 
+fac_num=115
+fac_num=114
+fac_num=117
+fac_num=116
+--endfaculty--
+--startfaculty--
+fac_name=Mathematics 
+fac_num=103
+fac_num=197
+fac_num=196
+fac_num=106
+fac_num=104
+--endfaculty--
+--startfaculty--
+fac_name=Chemistry 
+fac_num=123
+fac_num=124
+fac_num=125
+fac_num=126
+fac_num=127
+--endfaculty--
+--startfaculty--
+fac_name=Education in
+  Technology and Science 
+fac_num=216
+fac_num=214
+fac_num=210
+--endfaculty--
+--startfaculty--
+fac_name=Biotechnology and
+  Food Engineering 
+fac_num=064
+fac_num=066
+--endfaculty--
