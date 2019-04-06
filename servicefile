@@ -6,7 +6,8 @@ After=network.target
 User=root
 Group=root
 WorkingDirectory=/var/www/coursetree/
-ExecStart=/home/eytan_singher/.local/bin/uwsgi --ini /var/www/coursetree/coursetree.ini
+ExecStart=/var/www/coursetree/venv/bin/uwsgi --ini /var/www/coursetree/coursetree.ini
+Environment="PATH=/var/www/coursetree/venv/bin/"
 
 [Install]
 WantedBy=multi-user.target
