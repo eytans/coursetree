@@ -14,7 +14,6 @@ class BaseModel(Model):
         database = db
 
 
-# Maybe be  dick and save their info to check course grades to create good course recomendations
 class User(BaseModel):
     name = TextField()
     tz = CharField(max_length=10, primary_key=True)
