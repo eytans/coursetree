@@ -1,1 +1,1 @@
-sudo uwsgi --http :80 --wsgi-file server/rest.py --mount /coursetree=server/rest.py --callable app --manage-script-name
+sudo uwsgi --http :80 --wsgi-file server/rest.py --mount /coursetree=server/rest.py --callable app --manage-script-name --plugin python36
