@@ -81,7 +81,6 @@ def get_course_data():
         return jsonify(emptyres)
 
 
-
 if __name__ == "__main__":
     lock = zc.lockfile.LockFile(lockfile_path)
     try:

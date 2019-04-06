@@ -39,7 +39,7 @@ function onDrawClick() {
 
 		// color the nodes
 		nodes.update({
-			id: sourceId, 
+			id: sourceId,
 			color: {
 				background: 'white',
 				border: "black"
@@ -63,14 +63,13 @@ function onDrawClick() {
 			})
 		};
 
-		while (nextLayerIds.length != 0) {
-			var temp = nextLayerIds
-			nextLayerIds = edges.get(options={
-				filter: function(item) { return temp.includes(item.from) }
-			})
-			layer += 1
-			var doneThisRound = []
-			for (e of nextLayerIds) {
+		while (nextLayerIds.length !== 0) {
+			var nextLayerEdges = edges.get(options={
+				filter: function(item) { return nextLayerIds.includes(item.from) }
+			});
+			layer += 1;
+			var doneThisRound = [];
+			for (e of nextLayerEdges) {
 				var nextColor = nodes.get(e.from).color;
 				if (doneThisRound.includes(e.to)) {
 					nextColor = getRandomColor();
@@ -80,7 +79,8 @@ function onDrawClick() {
 					color: nextColor,
 					level: layer
 				})
-			};
+			}
+			nextLayerIds = nextLayerEdges.map(function(e) {return e.to});
 		}
 
 		var container = document.getElementById('mynetwork');
