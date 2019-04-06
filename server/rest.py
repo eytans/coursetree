@@ -40,7 +40,7 @@ for course in Course.select():
             forward_courses[int(preq)].append(course.number)
 logger.debug("forward courses:")
 for k, v in forward_courses.items():
-    logger.debug(k, v)
+    logger.debug(f'{k}: {v}')
 
 
 @app.route('/')
