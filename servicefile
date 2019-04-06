@@ -1,0 +1,12 @@
+[Unit]
+Description=uWSGI instance to serve coursetree
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/www/coursetree/
+ExecStart=/home/eytan_singher/.local/bin/uwsgi --ini /var/www/coursetree/coursetree.ini
+
+[Install]
+WantedBy=multi-user.target
