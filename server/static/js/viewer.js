@@ -29,12 +29,14 @@ function onDrawClick() {
 
 		var nodes = new vis.DataSet(data['nodes'].map(c => ({
 			'id': c.number,
-			'label': c.name + "\n" + c.number.toString()
+			'label': c.name + "\n" + c.number.toString(),
+			'hidden': false
 		})));
 
 		var edges = new vis.DataSet(data['edges'].map(t => ({
 			'from': t[0],
-			'to': t[1]
+			'to': t[1],
+			'hidden': false
 		})));
 
 		// color the nodes
@@ -116,8 +118,40 @@ function onDrawClick() {
 			}
 		};
 
+		function toggleSubtree(nodeId) {
+			var ee = edges.get({
+				filter: function(item) {
+					return item.from == nodeId
+				}
+			})
+			for (e of ee) {
+				n = nodes.get(e.to)
+				console.log(n)
+				edges.update([{id: e.id, hidden: !e.hidden}])
+				toggleSubtree(n.id)
+				nodes.update([{id: n.id, hidden: !n.hidden}])
+				//var insertedEdges = edges.get({
+				//	filter: function(item) {
+				//		return item.to == nodeId && item.hidden == true
+				//	}})
+				//if (insertedEdges.length == 0) {
+				//	var n = nodes.get(e.to)
+				//	nodes.update({id: n.id, hidden: !n.hidden})
+				//}
+			}
+		}
 		// initialize your network!
 		var network = new vis.Network(container, data, options);
+		// TODO: hide network upon single click
+		//network.on( 'click', function(properties) {
+		//	var n = nodes.get(properties.nodes)[0];
+		//	toggleSubtree(n.id)
+		//});
+		// Open course site upon double click :)
+		network.on( 'doubleClick', function(properties) {
+			var clickedNode = nodes.get(properties.nodes)[0];
+			window.open('https://ug3.technion.ac.il/rishum/course/' + clickedNode.id, '_blank');
+		});
 	})
 
 }
