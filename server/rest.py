@@ -40,7 +40,7 @@ for course in Course.select():
             forward_courses[int(preq)].append(course.number)
 logger.debug("forward courses:")
 for k, v in forward_courses.items():
-    logger.debug(k, v)
+    logger.debug(f'{k}: {v}')
 
 
 @app.route('/')
@@ -54,6 +54,11 @@ def send_js(path):
     return send_from_directory('static/js', path)
 
 
+@app.route('/css/<path:path>')
+def send_css(path):
+    return send_from_directory('static/css', path)
+
+
 @app.route('/db/', methods=['GET'])
 def get_course_data():
     coursenum = request.args['coursenum']
@@ -61,7 +66,7 @@ def get_course_data():
     if not isinstance(coursenum, str) or len(coursenum) > 10 or not coursenum.isdigit():
         return jsonify(emptyres)
 
-    def build_edges(num, visited=None):        
+    def build_edges(num, visited=None):
         if visited is None:
             visited = set()
         if int(num) not in courses or num in visited:
@@ -74,12 +79,12 @@ def get_course_data():
     try:
         edges = build_edges(coursenum)
         logger.debug(edges)
-        nodes = [model_to_dict(n) for n in set([courses[int(key[0])] for key in edges] + [courses[int(key[1])] for key in edges])]
+        nodes = [model_to_dict(n) for n in
+                 set([courses[int(key[0])] for key in edges] + [courses[int(key[1])] for key in edges])]
         return jsonify({"nodes": nodes, "edges": edges})
     except Exception as identifier:
         print(identifier)
         return jsonify(emptyres)
-
 
 
 if __name__ == "__main__":
