@@ -26,7 +26,7 @@ logger.addHandler(ch)
 
 app = Flask(__name__)
 limiter = Limiter(
-    app,
+    app=app,
     key_func=get_remote_address,
     default_limits=["5 per minute", "1 per second"],
 )
