@@ -7,7 +7,6 @@ from flask import Flask, jsonify, send_from_directory, send_file, request
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from collections import defaultdict
-from flask.helpers import safe_join
 from playhouse.shortcuts import model_to_dict
 from argparse import ArgumentParser
 
